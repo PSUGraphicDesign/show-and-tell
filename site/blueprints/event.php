@@ -7,6 +7,9 @@ files: true
 fields:
   title: 
     label: Artist Name
+    type: text
+  artist:
+    label: Associated Arist Profile
     type:  select
     options: query
     query:
