@@ -16,8 +16,8 @@
           <a href="<?= $artist->link() ?>"><?= $artist->title() ?></a>
         </h2> 
         <?= $artist->bio()->kirbytext() ?>
-       </div>
-      <? } ?>
+      </div>
+<? } ?>
     </article>
   </section>
 
