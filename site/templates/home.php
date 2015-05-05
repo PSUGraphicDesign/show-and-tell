@@ -2,26 +2,11 @@
 
 <main>
 
-  <? if ( $next ) { ?>
-    <section class="upcoming">
-      <article>
-        <div class="column full <?= $next->lightness() ?>" style="background-image: url(<?= $next->poster()->url() ?>)">
-          <?= html::a($next->url(), $next->title()) ?>
-        </div>
-      </article>
-    </section>
-  <? } ?>
-
-  <section class="artists">
+  <section class="upcoming">
     <article>
-      <? foreach ( page('artists')->children() as $artist ) { ?>
-        <div class="column third artist">
-          <h3>
-            <a href="<?= $artist->link() ?>"><?= $artist->title() ?></a>
-          </h3>
-          <?= $artist->bio()->kirbytext() ?>
-        </div>
-      <? } ?>
+      <div class="column full <?= $next->lightness() ?>" style="background-image: url(<?= $next->poster()->url() ?>)">
+        <?= html::a($next->url(), $next->title()) ?>
+      </div>
     </article>
   </section>
 
