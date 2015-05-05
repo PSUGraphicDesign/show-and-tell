@@ -14,6 +14,3 @@ fields:
   date:
     label: Date of Show
     type: date
-  header_color:
-    label: Header Color
-    type: color

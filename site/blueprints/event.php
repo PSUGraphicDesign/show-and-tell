@@ -18,6 +18,9 @@ fields:
   date:
     label: Date
     type: date
+  color:
+    label: Highlight Color
+    type: color
   video:
     label: Video
     type: url
