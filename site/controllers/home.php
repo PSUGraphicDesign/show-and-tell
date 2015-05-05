@@ -1,6 +1,6 @@
 <? return function ($site, $pages, $page) {
   return [
-    'current_term' => $pages->filterBy('intendedTemplate', 'year')->last()->children(),
+    'current_term' => ST::current_year()->current_term(),
     'next' => ST::next_event()
   ];
 };
