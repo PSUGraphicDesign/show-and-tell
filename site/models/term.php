@@ -1,5 +1,5 @@
 <? class TermPage extends Page {
   public function events () {
-    return $this->children();
+    return $this->children()->sortBy('date', 'asc');
   }
 }

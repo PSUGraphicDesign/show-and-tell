@@ -11,6 +11,10 @@
 
     return join($classes, ' ');
   }
+
+  public static function current_year () {
+    return site()->pages()->filterBy('intendedTemplate', 'year')->sortBy('title', 'asc')->last();
+  }
   
   public static function next_event () {
     return static::all_events()->filterBy('date', '>=', time())->first();

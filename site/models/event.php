@@ -3,6 +3,14 @@
     return $this->images()->first();
   }
 
+  public function status () {
+    return $this->date() > time() ? 'upcoming' : 'past';
+  }
+
+  public function time_sensitive_link () {
+    return html::a($this->url(), $this->title(), ['class' => $this->status()]);
+  }
+
   public function rgb_color () {
     $color = str_replace('#', '', $this->color()->toString());
 
