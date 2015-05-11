@@ -12,7 +12,7 @@
       <? foreach ( $artists as $artist ) { ?>
         <div class="column quarter">
           <h3><?= html::a($artist->url(), $artist->title()->html()) ?></h3>
-          <?= $artist->bio() ?>
+          <?= $artist->bio()->kirbytext() ?>
         </div>
       <? } ?>
     </article>
