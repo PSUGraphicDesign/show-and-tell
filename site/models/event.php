@@ -7,6 +7,10 @@
     return $this->date() > time() ? 'upcoming' : 'past';
   }
 
+  public function speaker () {
+    return page('artists')->find($this->artist());
+  }
+
   public function time_sensitive_link () {
     return html::a($this->url(), $this->title(), ['class' => $this->status()]);
   }
