@@ -21,3 +21,7 @@ fields:
   classes_end:
     label: Classes End
     type: date
+  poster:
+    label: Poster
+    type: select
+    options: images
