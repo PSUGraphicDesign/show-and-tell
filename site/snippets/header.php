@@ -14,10 +14,12 @@
   <header>
     <section>
       <article>
-        <div class="column half">
-          <h1><?= $site->title()->html() ?></h1>
+        <div class="column full">
+          <div class="logo">
+            <img src="assets/images/ShowTell.png">
+          </div>  
         </div>
-        <div class="column half">
+        <div class="column full">
           <ul class="navigation">
             <li><?= ST::link_for(page('home'), 'Home') ?></li>
             <li><?= ST::link_for(page('artists'), 'Artists') ?></li>
