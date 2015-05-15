@@ -15,8 +15,8 @@
 
   <section class="about">
     <article class="header">
-      <div class="column full">
-        About
+      <div class="column third">
+        ABOUT
       </div>
     </article>
     <article class="info">
@@ -38,8 +38,8 @@
 
   <section class="this-term">
     <article class="header">
-      <div class="column half">
-        <h2>This Term</h2>
+      <div class="column third">
+        THIS TERM
       </div>
     </article>
     <article class="event-list">
