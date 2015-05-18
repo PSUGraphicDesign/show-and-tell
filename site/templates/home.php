@@ -37,25 +37,27 @@
   </section>
 
   <section class="this-term">
-    <article class="header">
+    <article class="origin-right header">
       <div class="column third">
         THIS TERM
       </div>
     </article>
-    <article class="event-list">
+    <article class="event-list kebab">
       <div class="column half">
         <?= html::img($current_term->image($current_term->poster())->url()) ?>
       </div>
       <div class="column half">
-        <? if ( $current_term->count() ) { ?>
-          <ul>
-            <? foreach ( $current_term->events() as $event ) { ?>
-              <li><?= $event->date('F jS') ?>: <?= $event->time_sensitive_link() ?></li>
-            <? } ?>
-          </ul>
-        <? } else { ?>
-          We're not in session right now. Check back in the Fall!
-        <? } ?>
+        <div class="artist-list">
+          <? if ( $current_term->count() ) { ?>
+            <ul>
+              <? foreach ( $current_term->events() as $event ) { ?>
+                <li><?= $event->date('F jS') ?>: <?= $event->time_sensitive_link() ?></li>
+              <? } ?>
+            </ul>
+          <? } else { ?>
+            We're not in session right now. Check back in the Fall!
+          <? } ?>
+        </div>
       </div>
     </article>
   </section>
