@@ -5,12 +5,5 @@ pages: event
 files: true
 fields:
   title:
-    label: Upcoming Artist
-    type:  select
-    options: query
-    query:
-      page: artists
-      fetch: children
-  date:
-    label: Date of Show
-    type: date
+    label: Title
+    type: text
