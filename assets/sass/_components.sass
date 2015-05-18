@@ -28,7 +28,7 @@
     padding-top: 10px
     padding-bottom: 10px
     padding-left: 50px
-    float: right
+    // float: right
 
 .extra
   padding-bottom: 20px
@@ -42,3 +42,24 @@
     padding-right: 75px
   div.column.three-quarters.department-logos
     background: white
+
+.event-list
+  img
+    // width: 500px
+    // margin-top: 100px
+    // padding-left: 100px
+    // float: left
+
+.artist-list
+  list-style-type: none
+  ul
+    padding-left: 0
+  li
+    padding-bottom: 10px
+    background-color: $color-yellow
+    &:nth-of-type(odd)
+      background-color: lighten($color-yellow, 15%)
+
+.this-term
+  .column
+    padding: 0
