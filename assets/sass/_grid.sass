@@ -1,5 +1,16 @@
+article
+  max-width: 1000px
+  margin: 0 auto
+  &.origin-right
+    text-align: right
+    & > .column
+      text-align: initial
+  &.kebab
+    & > .column
+      vertical-align: middle
+
 .column
-  padding: 0 
+  padding: 0 1rem
   display: inline-block
   vertical-align: top
   font-size: $type-size-base
