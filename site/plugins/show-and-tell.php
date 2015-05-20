@@ -17,7 +17,7 @@
   }
   
   public static function next_event () {
-    return static::all_events()->filterBy('date', '>=', time())->first();
+    return static::all_events()->filterBy('date', '>=', time())->sortBy('date')->first();
   }
 
   public static function last_event () {
