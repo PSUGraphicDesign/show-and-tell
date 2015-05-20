@@ -1,6 +1,10 @@
 <? class EventPage extends Page {
   public function poster () {
-    return $this->images()->first();
+    if ( $this->hasImages() ) {
+      return $this->images()->first();
+    } else {
+      return false;
+    }
   }
 
   public function status () {
