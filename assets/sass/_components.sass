@@ -64,6 +64,37 @@
     padding: 20px 0 20px 20px
     &:nth-of-type(odd)
       background-color: lighten($color-yellow, 30%)
+.has-flag
+  overflow-x: hidden
+
+.flag
+  position: relative
+  margin: 3rem 0
+
+  h2
+    color: white
+    padding-top: 0.5em
+    padding-bottom: 0.5em
+    position: relative
+    margin: 0
+
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    background-color: $color-gray
+    width: 1000px
+    top: 0
+    height: 100%
+    z-index: -1
+
+  &.right
+    &::after
+      left: 0
+
+  &.left
+    &::after
+      right: 0
 
 .this-term
   .column

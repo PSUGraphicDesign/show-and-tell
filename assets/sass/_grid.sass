@@ -1,6 +1,13 @@
 article
+  position: relative
   max-width: 1000px
   margin: 0 auto
+
+  &.centered-layout
+    text-align: center
+    & > .column
+      text-align: initial
+
   &.origin-right
     text-align: right
     & > .column

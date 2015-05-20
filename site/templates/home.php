@@ -13,10 +13,10 @@
     </section>
   <? } ?>
 
-  <section class="about">
-    <article class="header">
-      <div class="column third">
-        ABOUT
+  <section class="about has-flag">
+    <article class="header origin-right">
+      <div class="column third flag right">
+        <h2>About</h2>
       </div>
     </article>
     <article class="info">
@@ -36,10 +36,10 @@
     </article>
   </section>
 
-  <section class="this-term">
+  <section class="this-term has-flag">
     <article class="origin-right header">
-      <div class="column third">
-        THIS TERM
+      <div class="column third flag right">
+        <h2>Upcoming</h2>
       </div>
     </article>
     <article class="event-list kebab">
