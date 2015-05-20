@@ -60,6 +60,21 @@
     </article>
   </section>
 
+  <section class="archive has-flag">
+    <article class="origin-right">
+      <div class="column third flag right">
+        <h2>Archive</h2>
+      </div>
+    </article>
+    <article class="full-bleed">
+      <? foreach ( $events as $event ) { ?>
+        <div class="column quarter" style="background-color: <?= $event->color() ?>; background-image: <?= $event->poster()->url() ?>">
+          <?= $event->title() ?>
+        </div>
+      <? } ?>
+    </article>
+  </section>
+
 </main>
 
 <? snippet('footer') ?>
