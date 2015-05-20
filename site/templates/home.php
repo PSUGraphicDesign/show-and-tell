@@ -3,7 +3,7 @@
 <main>
 
   <? if ( $next ) { ?>
-    <section class="upcoming has-flag" style="background-image: url(<?= $next->poster()->url() ?>)">
+    <section class="upcoming has-flag" style="background-image: url(<?= $next->poster() ?>)">
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
@@ -68,7 +68,7 @@
     </article>
     <article class="full-bleed">
       <? foreach ( $events as $event ) { ?>
-        <div class="column quarter event" style="background-color: <?= $event->color() ?>">
+        <div class="column quarter event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
           <div class="tile-content">
             <?= $event->title() ?>
           </div>

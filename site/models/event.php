@@ -1,9 +1,9 @@
 <? class EventPage extends Page {
   public function poster () {
     if ( $this->hasImages() ) {
-      return $this->images()->first();
+      return $this->images()->first()->url();
     } else {
-      return false;
+      return '/assets/images/ShowTell.png';
     }
   }
 
