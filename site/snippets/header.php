@@ -13,12 +13,14 @@
 <body class="<?= ST::body_classes() ?>">
   <header>
     <section>
-      <article>
-        <div class="column full">
-          <div class="logo">
-            <img src="assets/images/ShowTell.png">
-          </div>  
+      <article class="centered-layout">
+        <div class="column third logo">
+          <img src="assets/images/ShowTell.png">
         </div>
+      </article>
+    </section>
+    <section class="menu">
+      <article>
         <div class="column full">
           <ul class="navigation">
             <li><?= ST::link_for(page('home'), 'Home') ?></li>
