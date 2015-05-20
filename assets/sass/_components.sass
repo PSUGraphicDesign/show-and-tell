@@ -45,49 +45,10 @@ section.this-term
   li
     padding-bottom: 10px
     background-color: $color-yellow
-    font-size: ($type-size-base * 1.25)
-    padding: 20px 0 20px 20px
+    font-size: ($type-size-base * 1.5)
+    padding: 32px 0 32px 20px
     &:nth-of-type(even)
       background-color: lighten($color-gray, 75%)
 
-section.archive
-  .event
-    .tile-content
-      position: relative
-      padding-bottom: 100%
 
-.has-flag
-  overflow-x: hidden
 
-.flag
-  position: relative
-  margin: 3rem 0
-
-  h2
-    color: white
-    padding-top: 0.5em
-    padding-bottom: 0.5em
-    position: relative
-    margin: 0
-
-  &::after
-    content: ''
-    display: block
-    position: absolute
-    background-color: $color-gray
-    width: 1000px
-    top: 0
-    height: 100%
-    z-index: -1
-
-  &.right
-    &::after
-      left: 0
-
-  &.left
-    &::after
-      right: 0
-
-  &.yellow
-    &::after
-      background-color: $color-yellow
