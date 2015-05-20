@@ -68,8 +68,10 @@
     </article>
     <article class="full-bleed">
       <? foreach ( $events as $event ) { ?>
-        <div class="column quarter" style="background-color: <?= $event->color() ?>; background-image: <?= $event->poster()->url() ?>">
-          <?= $event->title() ?>
+        <div class="column quarter event" style="background-color: <?= $event->color() ?>">
+          <div class="tile-content">
+            <?= $event->title() ?>
+          </div>
         </div>
       <? } ?>
     </article>
