@@ -3,10 +3,10 @@
 <main>
 
   <? if ( $next ) { ?>
-    <section class="upcoming" style="background-image: url(<?= $next->poster()->url() ?>)">
-      <article>
-        <div class="column third <?= $next->lightness() ?>">
-          <h2><?= html::a($next->url(), $next->title()) ?></h2>
+    <section class="upcoming has-flag" style="background-image: url(<?= $next->poster()->url() ?>)">
+      <article class="origin-right">
+        <div class="column third flag right <?= $next->lightness() ?>">
+          <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
           <?= $next->speaker()->bio()->kirbytext() ?>
         </div>
       </article>
@@ -24,13 +24,13 @@
         <?= $about->text()->kirbytext() ?>
       </div>
     </article>
-    <article class="extra">
-      <div class="column quarter address">
+    <article class="extra kebab">
+      <div class="column quarter flag left yellow address">
         <?= $about->details()->kirbytext() ?>
       </div>
       <div class="column three-quarters department-logos">
         <? foreach ( $departments as $department ) { ?>
-          <?= html::img($about->image($department['logo'])->url()) ?>
+          <?= html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
         <? } ?>
       </div>
     </article>
@@ -47,17 +47,15 @@
         <?= html::img($current_term->image($current_term->poster())->url()) ?>
       </div>
       <div class="column half">
-        <div class="artist-list">
-          <? if ( $current_term->count() ) { ?>
-            <ul>
-              <? foreach ( $current_term->events() as $event ) { ?>
-                <li><?= $event->date('F jS') ?>: <?= $event->time_sensitive_link() ?></li>
-              <? } ?>
-            </ul>
-          <? } else { ?>
-            We're not in session right now. Check back in the Fall!
-          <? } ?>
-        </div>
+        <? if ( $current_term->count() ) { ?>
+          <ul>
+            <? foreach ( $current_term->events() as $event ) { ?>
+              <li><?= $event->date('F jS') ?>: <?= $event->time_sensitive_link() ?></li>
+            <? } ?>
+          </ul>
+        <? } else { ?>
+          We're not in session right now. Check back in the Fall!
+        <? } ?>
       </div>
     </article>
   </section>

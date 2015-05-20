@@ -13,37 +13,44 @@ section.menu
     color: $color-gray
     font-size: ($type-size-base * 1.5)
 
-.upcoming
-  div
-    background-color: $color-gray
-    color: white
+section.upcoming
+  color: white
+  .flag
+    margin: 4rem 0
 
-.info
-  p
-    padding-left: 100px
-    padding-right: 200px
-    padding-top: 20px
+section.about
+  .info
+    padding: 2rem 0
+
+  .extra
     padding-bottom: 20px
 
     .department-logos
       background: white
 
-.event-list
-  img
-    
+    .logo
+      display: inline-block
+      width: 100px
+      margin-right: 25px
+      vertical-align: middle
 
-.artist-list
-  list-style-type: none
+section.this-term
+  .event-list
+    .column
+      padding: 0
+
   ul
-    padding-left: 0
     list-style-type: none
+    padding-left: 0
   li
     padding-bottom: 10px
     background-color: $color-yellow
     font-size: ($type-size-base * 1.25)
     padding: 20px 0 20px 20px
-    &:nth-of-type(odd)
-      background-color: lighten($color-yellow, 30%)
+    &:nth-of-type(even)
+      background-color: lighten($color-gray, 75%)
+
+
 .has-flag
   overflow-x: hidden
 
@@ -76,6 +83,6 @@ section.menu
     &::after
       right: 0
 
-.this-term
-  .column
-    padding: 0
+  &.yellow
+    &::after
+      background-color: $color-yellow
