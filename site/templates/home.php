@@ -70,7 +70,9 @@
       <? foreach ( $events as $event ) { ?>
         <div class="column quarter event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
           <div class="tile-content">
-            <?= $event->title() ?>
+            <div class="tile-artist-name">
+              <?= $event->title()->kirbytext() ?>
+            </div>
           </div>
         </div>
       <? } ?>
