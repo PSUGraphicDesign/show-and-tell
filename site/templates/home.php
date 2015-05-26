@@ -7,6 +7,7 @@
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
+          
           <?= $next->speaker()->bio()->kirbytext() ?>
         </div>
       </article>
@@ -71,7 +72,7 @@
         <div class="column quarter event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
           <div class="tile-content">
             <div class="tile-artist-name">
-              <?= $event->title()->kirbytext() ?>
+              <p><?= $event->title()->kirbytext() ?></p>
             </div>
           </div>
         </div>
