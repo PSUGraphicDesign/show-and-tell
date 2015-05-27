@@ -11,7 +11,11 @@ fields:
   bio:
     label: Artist's Bio
     type: textarea
+    required: true
+  short_bio:
+    label: Short Bio
+    type: textarea
+    help: We'll use this on the homepage, if one is provided.
   link:
     label: Link
     type: url
-  

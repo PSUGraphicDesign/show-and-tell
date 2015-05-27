@@ -12,6 +12,8 @@
     return join($classes, ' ');
   }
 
+  // Queries
+
   public static function current_year () {
     return site()->pages()->filterBy('intendedTemplate', 'year')->sortBy('title', 'asc')->last();
   }
@@ -27,6 +29,18 @@
   public static function all_events ($sort = 'desc') {
     return site()->index()->filterBy('intendedTemplate', 'event')->sortBy('date', $sort);
   }
+
+  public static function all_artists ($sort = 'desc') {
+    return site()->index()->filterBy('intendedTemplate', 'artist');
+  }
+
+  // Search
+
+  public static function search ($term) {
+    return static::all_artists()->search($term);
+  }
+
+  // Links & URLs
 
   public static function link_for ($page, $title) {
     return html::a($page->url(), $title, ['class' => ($page->isOpen() ? 'active' : null)]);

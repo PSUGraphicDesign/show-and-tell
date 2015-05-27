@@ -7,8 +7,11 @@
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
-          
-          <?= $next->speaker()->bio()->kirbytext() ?>
+          <? if ( $next->speaker()->short_bio()->length() ) { ?>
+            <?= $next->speaker()->short_bio()->kirbytext() ?>
+          <? } else { ?>
+            <?= $next->speaker()->bio()->kirbytext() ?>
+          <? } ?>
         </div>
       </article>
     </section>
@@ -16,7 +19,7 @@
 
   <section id="about" class="about has-flag">
     <article class="header origin-right">
-      <div class="column third flag right">
+      <div class="column third flag no-space right">
         <h2>About</h2>
       </div>
     </article>
@@ -26,7 +29,7 @@
       </div>
     </article>
     <article class="extra kebab">
-      <div class="column quarter flag left yellow address">
+      <div class="column quarter flag left yellow no-space address">
         <?= $about->details()->kirbytext() ?>
       </div>
       <div class="column three-quarters department-logos">
@@ -53,7 +56,16 @@
         <? if ( $current_term->count() ) { ?>
           <ul>
             <? foreach ( $current_term->events() as $event ) { ?>
-              <li><?= $event->date('F jS') ?>: <?= $event->time_sensitive_link() ?></li>
+              <li>
+                <a href="<?= $event->url() ?>" class="<?= $event->status() ?>">
+                  <h6>
+                    <?= $event->date('F jS') ?>
+                  </h6>
+                  <h3>
+                    <?= $event->title() ?>
+                  </h3>
+                </a>
+              </li>
             <? } ?>
           </ul>
         <? } else { ?>
@@ -69,7 +81,7 @@
         <h2>Archive</h2>
       </div>
     </article>
-    <article class="full-bleed">
+    <article class="tiles full-bleed">
       <? foreach ( $events as $event ) { ?>
         <div class="column quarter tablet-third mobile-half event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
           <a href="<?= $event->url() ?>" class="tile-content">
@@ -78,9 +90,12 @@
         </div>
       <? } ?>
     </article>
+  </section>
+
+  <section id="archive-more" class="archive-visit dark">
     <article class="more centered-layout">
-      <div class="column quarter">
-        <?= html::a(page('archive')->url(), 'Full Archive') ?>
+      <div class="column third mobile-full more">
+        <?= html::a(page('archive')->url(), 'Full Archive', ['class' => 'button large gray']) ?>
       </div>
     </article>
   </section>
