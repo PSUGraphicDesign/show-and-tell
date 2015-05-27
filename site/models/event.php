@@ -15,8 +15,9 @@
     return page('artists')->find($this->artist());
   }
 
-  public function time_sensitive_link () {
-    return html::a($this->url(), $this->title(), ['class' => $this->status()]);
+  public function time_sensitive_link ($text = null) {
+    if ( !isset($text) ) $text = $this->title();
+    return html::a($this->url(), $text, ['class' => $this->status()]);
   }
 
   public function rgb_color () {

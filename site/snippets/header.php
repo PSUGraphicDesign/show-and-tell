@@ -8,25 +8,37 @@
   <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
 
   <?= css('assets/css/show-and-tell.css') ?>
+  <?= js('//use.typekit.net/yzr6wth.js') ?>
+  <script>try{Typekit.load();}catch(e){}</script>
 
 </head>
 <body class="<?= ST::body_classes() ?>">
   <header>
-    <section>
+    <section class="branding">
       <article class="centered-layout">
-        <div class="column third logo">
-          <img src="assets/images/ShowTell.png">
+        <div class="column quarter tablet-third mobile-half logo">
+          <a href="<?= $site->url() ?>">
+            <img src="<?= ST::asset('images', 'ShowTell.png') ?>">
+          </a>
         </div>
       </article>
     </section>
     <section class="menu">
-      <article>
-        <div class="column full">
-          <ul class="navigation">
-            <li><?= ST::link_for(page('home'), 'Home') ?></li>
-            <li><?= ST::link_for(page('artists'), 'Artists') ?></li>
-            <li><?= ST::link_for(page('archive'), 'Archive') ?></li>
-          </ul>
+      <article class="kebab navigation">
+        <div class="column sixth link">
+          <a href="<?= $site->url() ?>#about">About</a>
+        </div>
+        <div class="column sixth link">
+          <a href="<?= $site->url() ?>#upcoming">Upcoming</a>
+        </div>
+        <div class="column sixth link">
+          <?= ST::link_for(page('artists'), 'Artists') ?>
+        </div>
+        <div class="column sixth link">
+          <?= ST::link_for(page('archive'), 'Archive') ?>
+        </div>
+        <div class="column third link search">
+          <? snippet('search-menu') ?>
         </div>
       </article>
     </section>

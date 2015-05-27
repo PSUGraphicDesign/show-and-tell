@@ -1,0 +1,34 @@
+Title: About
+
+----
+
+Text: Show & Tell is a weekly lecture series which invites working professionals to blow our minds with wisdom, both in person and through the magic of the world wide web! Our lectures happen every Thursday in the Art Building. The public is welcome and the lectures are free! Come and join us!
+
+----
+
+Details: 
+
+Thursday 12-1pm
+Art Building Rm. 320
+2000 SW 5th Ave.
+Portland, OR 97201
+
+----
+
+Department-logos: 
+
+- 
+  department: FoGD
+  logo: fogd_03.png
+- 
+  department: PSU
+  logo: logo_03.png
+- 
+  department: PSU
+  logo: logo_06.png
+- 
+  department: A + D
+  logo: logo_10.png
+- 
+  department: PSU
+  logo: logo_14.png

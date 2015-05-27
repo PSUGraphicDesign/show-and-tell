@@ -1,0 +1,71 @@
+section.next
+  color: white
+  .flag
+    margin: 4rem 0
+  p 
+    text-justify: auto
+
+
+section.about
+  .info
+    padding: 2rem 0
+
+  .extra
+    padding-bottom: 20px
+
+    .department-logos
+      background: white
+      a
+        display: inline-block
+        text-decoration: none
+        &:hover
+          opacity: 0.5
+
+    .logo
+      display: inline-block
+      width: 100px
+      margin-right: 25px
+      vertical-align: middle
+
+section.this-term
+  .event-list
+    .column
+      padding: 0
+
+  h3
+    margin: 0
+
+  h6
+    margin: 0
+    opacity: 0.5
+
+  ul
+    list-style-type: none
+    padding-left: 0
+
+  a
+    display: block
+    padding: 1.1rem
+    text-decoration: none
+    transition: 0.1s linear background-color
+    &:hover
+      background-color: transparentize($color-gray, 0.9)
+
+  li
+    background-color: $color-yellow
+
+    &:nth-of-type(even)
+      background-color: lighten($color-gray, 75%)
+
+    &:hover
+
+section.archive
+  padding-bottom: 0
+  .tiles
+    background-color: $color-gray
+    
+
+section.archive-visit
+  background-color: $color-gray
+  .more
+    text-align: center

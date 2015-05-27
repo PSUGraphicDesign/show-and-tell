@@ -1,0 +1,29 @@
+body.search
+  section.page-title
+    background-color: $color-gray-light
+
+section.search
+
+section.menu
+  .search-form
+    display: block
+    position: relative
+    .search
+    .go
+      position: absolute
+      right: 0
+      top: 0
+      width: 25%
+      background-color: transparent
+      padding-left: 0
+      padding-right: 0
+
+section.search-results
+  .result
+    padding-top: 3rem
+    padding-bottom: 3rem
+    border-top: 2px solid $color-gray-light
+    & + .result
+
+    &:last-of-type
+      border-bottom: 2px solid $color-gray-light

@@ -2,27 +2,75 @@
 
 <main>
 
-  <section class="page-title">
-    <article>
-      <div class="column half">
-        <h1><?= $page->title()->html() ?></h1>
+  <section class="page-title <?= $page->lightness() ?>" style="background-color: <?= $page->color() ?>">
+    <article class="kebab">
+      <div class="column three-quarters">
+        <? if ( $speaker->link() ) { ?>
+          <h1>
+            <a href="<?= $speaker->link() ?>" target="_blank"><?= $page->title()->html() ?></a>
+          </h1>
+        <? } else { ?>
+          <h1><?= $page->title()->html() ?></h1>
+        <? } ?>
       </div>
-    </article>
-  </section>
-
-  <section class="artist-poster">
-    <article>
-      <div class="column quarter event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
+      <div class="column quarter">
+        <?= $page->date('F jS, Y') ?>
       </div>
     </article>
   </section>
 
   <section class="event-info">
     <article>
-      <div class="column half">
-        <p>
-          <?= $next->speaker()->bio()->kirbytext() ?>
-        </p>
+      <div class="column two-thirds">
+        <div class="info-group text">
+          <?= $speaker->bio()->kirbytext() ?>
+        </div>
+
+        <? if ( $speaker->link() ) { ?>
+          <div class="info-group link">
+            <a href="<?= $speaker->link() ?>" target="_blank">Website</a>
+          </div>
+        <? } ?>
+
+        <? if ( $page->info()->length()) { ?> 
+          <div class="info-group link">
+            <?= $page->info()->kirbytext() ?>
+          </div>
+        <? } ?>
+
+        <? if ( $speaker->other_events($page)->count() ) { ?>
+          <div class="info-group other-events">
+            <h3><?= $speaker->title() ?> was also a <em>Show & Tell</em> guest on:</h3>
+            <ul>
+              <? foreach ( $speaker->other_events($page) as $other ) { ?>
+                <li><?= html::a($other->url(), $other->date('F jS, Y')) ?></li>
+              <? } ?>
+          </div>
+        <? } ?>
+      </div>
+      <div class="column third">
+        <?= html::img($page->poster()) ?>
+      </div>
+    </article>
+  </section>
+
+  <section class="pagination">
+    <article>
+      <div class="column half previous">
+        <? if ( $page->hasPrev() ) { ?>
+          <a href="<?= $page->prev()->url() ?>">
+            <span class="direction">Previous</span>
+            <?= $page->prev()->title() ?>
+          </a>
+        <? } ?>
+      </div>
+      <div class="column half next">
+        <? if ( $page->hasNext() ) { ?>
+          <a href="<?= $page->next()->url() ?>">
+            <span class="direction">Next</span>
+            <?= $page->next()->title() ?>
+          </a>
+        <? } ?>
       </div>
     </article>
   </section>

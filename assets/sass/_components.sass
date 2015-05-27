@@ -1,58 +1,7 @@
-header
-  background: $color-yellow
-  img
-    max-width: 100%
+@import sections/header
+@import sections/home
+@import sections/event
+@import sections/artists
+@import sections/archive
 
-section.menu
-  background: white
-  text-align: center
-  list-style-type: none
-  li
-    display: inline
-    padding-right: 200px
-    color: $color-gray
-    font-size: ($type-size-base * 1.5)
-
-section.upcoming
-  color: white
-  .flag
-    margin: 4rem 0
-  a
-    color: $color-yellow
-  p 
-    text-justify: auto
-
-section.about
-  .info
-    padding: 2rem 0
-
-  .extra
-    padding-bottom: 20px
-
-    .department-logos
-      background: white
-
-    .logo
-      display: inline-block
-      width: 100px
-      margin-right: 25px
-      vertical-align: middle
-
-section.this-term
-  .event-list
-    .column
-      padding: 0
-
-  ul
-    list-style-type: none
-    padding-left: 0
-  li
-    padding-bottom: 10px
-    background-color: $color-yellow
-    font-size: ($type-size-base * 1.5)
-    padding: 32px 0 32px 20px
-    &:nth-of-type(even)
-      background-color: lighten($color-gray, 75%)
-
-
-
+@import spot-colors

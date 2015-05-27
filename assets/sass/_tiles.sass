@@ -2,23 +2,29 @@ section.archive
   .event
     background-position: center
     background-size: cover
+
+    &:hover
+      .tile-content
+        opacity: 1
+
     .tile-content
+      display: block
       position: relative
       padding-bottom: 100%
       font-size: 0px
-    .tile-content:hover
-      background-color: rgba($color-gray, .8)
-      .tile-artist-name
-        p
-          font-size: ($type-size-base * 1.5)
-          color: white
-          position: absolute
-          margin: auto
-          top: 50%
-          left: 0 
-          bottom: 0
-          right: 0 
-          text-align: center
+      transition: 0.15s linear opacity
+      background-color: transparentize($color-gray, 0.2)
+      opacity: 0
+
+      h3
+        color: white
+        position: absolute
+        margin: 0
+        top: 46%
+        left: 0 
+        bottom: 0
+        right: 0 
+        text-align: center
 
         
 

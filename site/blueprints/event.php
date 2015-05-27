@@ -21,6 +21,7 @@ fields:
   color:
     label: Highlight Color
     type: color
-  video:
-    label: Video
-    type: url
+  info:
+    label: Event Information
+    type: textarea
+    buttons: false

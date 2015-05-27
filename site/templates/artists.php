@@ -2,16 +2,19 @@
 
 <main>
 
-  <section class="artist-list">
-    <article>
+  <section class="page-title">
+    <article class="kebab">
       <div class="column full">
-        <h2><?= $page->title()->html() ?></h2>
+        <h1><?= $page->title()->html() ?></h1>
       </div>
     </article>
+  </section>
+
+  <section class="artist-list">
     <article>
       <? foreach ( $artists as $artist ) { ?>
-        <div class="column quarter">
-          <h3><?= html::a($artist->url(), $artist->title()->html()) ?></h3>
+        <div class="column half artist">
+          <h3><?= $artist->title()->html() ?></h3>
           <?= $artist->bio()->kirbytext() ?>
         </div>
       <? } ?>
