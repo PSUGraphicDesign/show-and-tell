@@ -7,6 +7,9 @@
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
+          <div class="date">
+            <?= $next->date('F jS') ?>
+          </div>
           <? if ( $next->speaker()->short_bio()->length() ) { ?>
             <?= $next->speaker()->short_bio()->kirbytext() ?>
           <? } else { ?>
