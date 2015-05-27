@@ -7,7 +7,6 @@
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
-          
           <?= $next->speaker()->bio()->kirbytext() ?>
         </div>
       </article>
