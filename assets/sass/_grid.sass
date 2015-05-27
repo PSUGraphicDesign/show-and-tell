@@ -27,21 +27,71 @@ article
   display: inline-block
   vertical-align: top
   font-size: $type-size-base
+  position: relative
 
   &.full
     width: 100%
+    +mobile
+      width: 100%
 
   &.three-quarters
     width: (100% / 4) * 3
+    +mobile
+      width: 100%
 
   &.two-thirds
     width: (100% / 3) * 2
+    +mobile
+      width: 100%
 
   &.half
     width: (100% / 2)
+    +mobile
+      width: 100%
 
   &.third
     width: (100% / 3)
+    +mobile
+      width: 100%
 
   &.quarter
     width: (100% / 4)
+    +mobile
+      width: 100%
+
+  &.fifth
+    width: (100% / 5)
+    +mobile
+      width: 100%
+
+  &.sixth
+    width: (100% / 6)
+    +mobile
+      width: 100%
+
+  +tablet
+    &.tablet-full
+      width: 100%
+
+    &.tablet-two-thirds
+      width: (100% / 3) * 2
+
+    &.tablet-half
+      width: (100% / 2)
+
+    &.tablet-third
+      width: (100% / 3)
+
+    &.tablet-quarter
+      width: (100% / 4)
+
+  +mobile
+
+    &.mobile-full
+      width: 100%
+
+    &.mobile-half
+      width: (100% / 2)
+
+    &.mobile-quarter
+      width: (100% / 4)

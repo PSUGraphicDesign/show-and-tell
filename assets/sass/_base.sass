@@ -10,6 +10,7 @@ body
   font-size: $type-size-base
 
 section
+  padding: 3rem 0
   position: relative
   z-index: 0
 
@@ -35,4 +36,25 @@ figure
 
 a
   color: inherit
-  text-decoration: none
+  // text-decoration: none
+
+// Input
+
+input, button, .button
+  display: block
+  width: 100%
+  font: inherit
+  padding: 0.25em 0.5em
+  background: $color-gray-light
+  border: 2px solid transparent
+  -webkit-appearance: none
+  outline: none
+  &:focus
+    border: 2px solid $color-gray-mid
+
+.button
+  cursor: pointer
+  &:focus
+    border: 2px solid transparent
+  &:active
+    background-color: $color-gray-mid

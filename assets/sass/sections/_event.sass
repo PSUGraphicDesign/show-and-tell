@@ -1,0 +1,29 @@
+body.event
+  section.page-title
+    h1
+      margin: 0
+    a
+      text-decoration: none
+
+section.event-info
+  .info-group
+    & + .info-group
+      margin-top: 3rem
+
+section.pagination
+  a
+    text-decoration: none
+
+  .previous,
+  .next
+    &:hover
+
+  .previous
+    text-align: left
+  .next
+    text-align: right
+  .direction
+    color: $color-gray-mid
+    display: block
+    +small-caps
+  

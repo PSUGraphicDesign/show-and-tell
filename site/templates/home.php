@@ -71,14 +71,17 @@
     </article>
     <article class="full-bleed">
       <? foreach ( $events as $event ) { ?>
-        <div class="column quarter event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
-          <div class="tile-content">
-            <div class="tile-artist-name">
-              <p><?= $event->title()->kirbytext() ?></p>
-            </div>
-          </div>
+        <div class="column quarter tablet-third mobile-half event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
+          <a href="<?= $event->url() ?>" class="tile-content">
+            <h3><?= $event->title()->html() ?></h3>
+          </a>
         </div>
       <? } ?>
+    </article>
+    <article class="more centered-layout">
+      <div class="column quarter">
+        <?= html::a(page('archive')->url(), 'Full Archive') ?>
+      </div>
     </article>
   </section>
 
