@@ -53,7 +53,6 @@
     </section>
   <? } ?>
 
-
 </main>
 
 <? snippet('footer') ?>

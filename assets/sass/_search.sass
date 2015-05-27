@@ -1,7 +1,7 @@
 body.search
   section.page-title
     background-color: $color-gray-light
-    
+
 section.search
 
 section.menu
@@ -20,5 +20,10 @@ section.menu
 
 section.search-results
   .result
+    padding-top: 3rem
+    padding-bottom: 3rem
+    border-top: 2px solid $color-gray-light
     & + .result
-      margin-top: 3rem
+
+    &:last-of-type
+      border-bottom: 2px solid $color-gray-light
