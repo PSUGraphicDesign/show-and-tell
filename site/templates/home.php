@@ -31,7 +31,9 @@
       </div>
       <div class="column three-quarters department-logos">
         <? foreach ( $departments as $department ) { ?>
-          <?= html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
+          <a href="<?= $department['url'] ?>">
+            <?= html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
+          </a>
         <? } ?>
       </div>
     </article>

@@ -29,3 +29,8 @@ fields:
         label: Logo
         type: select
         options: images
+        required: true
+      url:
+        label: Link
+        type: url
+        required: true
