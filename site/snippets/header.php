@@ -25,7 +25,7 @@
       <article>
         <div class="column full">
           <ul class="navigation">
-            <li><?= ST::link_for(page('home'), 'Home') ?></li>
+            <li><?= ST::link_for(page('about'), 'About') ?></li>
             <li><?= ST::link_for(page('artists'), 'Artists') ?></li>
             <li><?= ST::link_for(page('archive'), 'Archive') ?></li>
           </ul>
