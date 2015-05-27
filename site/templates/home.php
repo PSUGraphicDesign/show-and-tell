@@ -3,7 +3,7 @@
 <main>
 
   <? if ( $next ) { ?>
-    <section class="upcoming has-flag" style="background-image: url(<?= $next->poster() ?>)">
+    <section class="next has-flag" style="background-image: url(<?= $next->poster() ?>)">
       <article class="origin-right">
         <div class="column third flag right <?= $next->lightness() ?>">
           <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
@@ -14,7 +14,7 @@
     </section>
   <? } ?>
 
-  <section class="about has-flag">
+  <section id="about" class="about has-flag">
     <article class="header origin-right">
       <div class="column third flag right">
         <h2>About</h2>
@@ -39,7 +39,7 @@
     </article>
   </section>
 
-  <section class="this-term has-flag">
+  <section id="upcoming" class="this-term has-flag">
     <article class="origin-right header">
       <div class="column third flag right">
         <h2>Upcoming</h2>
@@ -63,7 +63,7 @@
     </article>
   </section>
 
-  <section class="archive has-flag">
+  <section id="archive" class="archive has-flag">
     <article class="origin-right">
       <div class="column third flag right">
         <h2>Archive</h2>
