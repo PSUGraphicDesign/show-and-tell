@@ -10,7 +10,7 @@
     </article>
     <article>
       <? foreach ( $artists as $artist ) { ?>
-        <div class="column quarter">
+        <div class="column half">
           <h3><?= html::a($artist->url(), $artist->title()->html()) ?></h3>
           <?= $artist->bio()->kirbytext() ?>
         </div>
