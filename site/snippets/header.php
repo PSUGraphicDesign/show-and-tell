@@ -15,7 +15,7 @@
     <section>
       <article class="centered-layout">
         <div class="column third logo">
-          <img src="assets/images/ShowTell.png">
+          <img src="<?= ST::asset('images', 'ShowTell.png') ?>">
         </div>
       </article>
     </section>

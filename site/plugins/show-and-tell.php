@@ -24,11 +24,15 @@
     return static::all_events()->filterBy('date', '<=', time())->first();
   }
 
-  public static function all_events ( $sort = 'desc' ) {
+  public static function all_events ($sort = 'desc') {
     return site()->index()->filterBy('intendedTemplate', 'event')->sortBy('date', $sort);
   }
 
-  public static function link_for ( $page, $title ) {
+  public static function link_for ($page, $title) {
     return html::a($page->url(), $title, ['class' => ($page->isOpen() ? 'active' : null)]);
+  }
+
+  public static function asset ($type, $filename) {
+    return site()->url() . '/assets/' . $type . '/' . $filename;
   }
 }
