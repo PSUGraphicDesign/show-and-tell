@@ -1,6 +1,6 @@
 <? class YearPage extends Page {
   public function terms () {
-    return $this->children();
+    return $this->children()->sortBy('classes_begin', 'asc');
   }
 
   public function current_term () {
