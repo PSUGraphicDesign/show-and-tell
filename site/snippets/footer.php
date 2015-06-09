@@ -1,7 +1,7 @@
 <section class="footer">
   <article>
     <div>
-      <h6>&copy; 2015 August Miller and Kadie Kobielusz</h6>
+      <h6><?= $site->copyright()->kirbytext() ?></h6>
     </div>
   </article>
 </section>
