@@ -1,5 +1,5 @@
 <?php return function ($site, $pages, $page) {
-  return [
+  return array(
     'archive' => $pages->filterBy('intendedTemplate', 'year')->flip()
-  ];
+  );
 };

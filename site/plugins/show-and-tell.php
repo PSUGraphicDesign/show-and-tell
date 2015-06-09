@@ -43,7 +43,7 @@
   // Links & URLs
 
   public static function link_for ($page, $title) {
-    return html::a($page->url(), $title, ['class' => ($page->isOpen() ? 'active' : null)]);
+    return html::a($page->url(), $title, array('class' => ($page->isOpen() ? 'active' : null)));
   }
 
   public static function asset ($type, $filename) {

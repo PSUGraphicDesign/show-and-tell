@@ -1,5 +1,5 @@
 <?php return function ($site, $pages, $page) {
-  return [
+  return array(
     'artists' => $page->children()
-  ];
+  );
 };

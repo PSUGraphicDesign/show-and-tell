@@ -17,7 +17,7 @@
 
   public function time_sensitive_link ($text = null) {
     if ( !isset($text) ) $text = $this->title();
-    return html::a($this->url(), $text, ['class' => $this->status()]);
+    return html::a($this->url(), $text, array('class' => $this->status()));
   }
 
   public function rgb_color () {

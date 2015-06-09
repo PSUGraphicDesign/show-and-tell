@@ -38,7 +38,7 @@
       <div class="column three-quarters department-logos">
         <?php foreach ( $departments as $department ) { ?>
           <a href="<?php echo $department['url'] ?>">
-            <?php echo html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
+            <?php echo html::img($about->image($department['logo'])->url(), array('class' => 'logo')) ?>
           </a>
         <?php } ?>
       </div>
@@ -98,7 +98,7 @@
   <section id="archive-more" class="archive-visit dark">
     <article class="more centered-layout">
       <div class="column third mobile-full more">
-        <?php echo html::a(page('archive')->url(), 'Full Archive', ['class' => 'button large gray']) ?>
+        <?php echo html::a(page('archive')->url(), 'Full Archive', array('class' => 'button large gray')) ?>
       </div>
     </article>
   </section>
