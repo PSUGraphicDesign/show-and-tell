@@ -23,11 +23,11 @@
   public function rgb_color () {
     $color = str_replace('#', '', $this->color()->toString());
 
-    return [
+    return array(
       'red' => hexdec(substr($color, 0, 2)),
       'green' => hexdec(substr($color, 2, 2)),
       'blue' => hexdec(substr($color, 4, 2))
-    ];
+    );
   }
 
   public function is_dark () {
