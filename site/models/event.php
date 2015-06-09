@@ -3,7 +3,7 @@
     if ( $this->hasImages() ) {
       return $this->images()->first()->url();
     } else {
-      return '/assets/images/ShowTell.png';
+      return ST::asset('images', 'ShowTell.png');
     }
   }
 
