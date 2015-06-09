@@ -1,4 +1,4 @@
-<? class EventPage extends Page {
+<?php class EventPage extends Page {
   public function poster () {
     if ( $this->hasImages() ) {
       return $this->images()->first()->url();

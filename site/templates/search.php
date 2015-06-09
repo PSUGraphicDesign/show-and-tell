@@ -1,49 +1,49 @@
-<? snippet('header') ?>
+<?php snippet('header') ?>
 
 <main>
 
-  <section class="page-title <?= $page->lightness() ?>" style="background-color: <?= $page->color() ?>">
+  <section class="page-title <?php echo $page->lightness() ?>" style="background-color: <?php echo $page->color() ?>">
     <article class="kebab">
       <div class="column full">
-        <? if ( get('term') ) { ?>
-          <h1>Search: <span class="results"><?= $results->count() ?> Results</span></h1>
-        <? } else { ?>
+        <?php if ( get('term') ) { ?>
+          <h1>Search: <span class="results"><?php echo $results->count() ?> Results</span></h1>
+        <?php } else { ?>
           <h1>Search: <span class="results">Nada!</span></h1>
-        <? } ?>
+        <?php } ?>
       </div>
     </article>
   </section>
 
-  <? if ( $results->count() ) { ?>
+  <?php if ( $results->count() ) { ?>
     <section class="search-results found">
-      <? foreach ( $results as $result ) { ?>
+      <?php foreach ( $results as $result ) { ?>
         <article class="result">
           <div class="column two-thirds">
             <h3>
-              <?= $result->title() ?>
+              <?php echo $result->title() ?>
             </h3>
-            <? if ( $result->short_bio()->length() ) { ?>
-              <?= $result->short_bio()->kirbytext() ?>
-            <? } else { ?>
-              <?= $result->bio()->excerpt() ?>
-            <? } ?>
+            <?php if ( $result->short_bio()->length() ) { ?>
+              <?php echo $result->short_bio()->kirbytext() ?>
+            <?php } else { ?>
+              <?php echo $result->bio()->excerpt() ?>
+            <?php } ?>
           </div>
           <div class="column third">
-            <? if ( $result->events()->count() ) { ?>
+            <?php if ( $result->events()->count() ) { ?>
               <h4>Events</h4>
               <ul>
-                <? foreach ( $result->events() as $event ) { ?>
-                  <li><?= html::a($event->url(), $event->date('M jS, Y')) ?></li>
-                <? } ?>
+                <?php foreach ( $result->events() as $event ) { ?>
+                  <li><?php echo html::a($event->url(), $event->date('M jS, Y')) ?></li>
+                <?php } ?>
               </ul>
-            <? } ?>
+            <?php } ?>
           </div>
           <div class="column full">
           </div>
         </article>
-      <? } ?>
+      <?php } ?>
     </section>
-  <? } else { ?>
+  <?php } else { ?>
     <section class="search-results none">
       <article>
         <div class="column full">
@@ -51,8 +51,8 @@
         </div>
       </article>
     </section>
-  <? } ?>
+  <?php } ?>
 
 </main>
 
-<? snippet('footer') ?>
+<?php snippet('footer') ?>

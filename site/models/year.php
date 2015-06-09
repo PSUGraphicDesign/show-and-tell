@@ -1,4 +1,4 @@
-<? class YearPage extends Page {
+<?php class YearPage extends Page {
   public function terms () {
     return $this->children()->sortBy('classes_begin', 'asc');
   }

@@ -1,24 +1,24 @@
-<? snippet('header') ?>
+<?php snippet('header') ?>
 
 <main>
 
-  <? if ( $next ) { ?>
-    <section class="next has-flag" style="background-image: url(<?= $next->poster() ?>)">
+  <?php if ( $next ) { ?>
+    <section class="next has-flag" style="background-image: url(<?php echo $next->poster() ?>)">
       <article class="origin-right">
-        <div class="column third flag right <?= $next->lightness() ?>">
-          <h2 style="color: <?= $next->color() ?>"><?= html::a($next->url(), $next->title()) ?></h2>
+        <div class="column third flag right <?php echo $next->lightness() ?>">
+          <h2 style="color: <?php echo $next->color() ?>"><?php echo html::a($next->url(), $next->title()) ?></h2>
           <div class="date">
-            <?= $next->date('F jS') ?>
+            <?php echo $next->date('F jS') ?>
           </div>
-          <? if ( $next->speaker()->short_bio()->length() ) { ?>
-            <?= $next->speaker()->short_bio()->kirbytext() ?>
-          <? } else { ?>
-            <?= $next->speaker()->bio()->kirbytext() ?>
-          <? } ?>
+          <?php if ( $next->speaker()->short_bio()->length() ) { ?>
+            <?php echo $next->speaker()->short_bio()->kirbytext() ?>
+          <?php } else { ?>
+            <?php echo $next->speaker()->bio()->kirbytext() ?>
+          <?php } ?>
         </div>
       </article>
     </section>
-  <? } ?>
+  <?php } ?>
 
   <section id="about" class="about has-flag">
     <article class="header origin-right">
@@ -28,19 +28,19 @@
     </article>
     <article class="info">
       <div class="column full">
-        <?= $about->text()->kirbytext() ?>
+        <?php echo $about->text()->kirbytext() ?>
       </div>
     </article>
     <article class="extra kebab">
       <div class="column quarter flag left yellow no-space address">
-        <?= $about->details()->kirbytext() ?>
+        <?php echo $about->details()->kirbytext() ?>
       </div>
       <div class="column three-quarters department-logos">
-        <? foreach ( $departments as $department ) { ?>
-          <a href="<?= $department['url'] ?>">
-            <?= html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
+        <?php foreach ( $departments as $department ) { ?>
+          <a href="<?php echo $department['url'] ?>">
+            <?php echo html::img($about->image($department['logo'])->url(), ['class' => 'logo']) ?>
           </a>
-        <? } ?>
+        <?php } ?>
       </div>
     </article>
   </section>
@@ -53,27 +53,27 @@
     </article>
     <article class="event-list kebab">
       <div class="column half">
-        <?= html::img($current_term->image($current_term->poster())->url()) ?>
+        <?php echo html::img($current_term->image($current_term->poster())->url()) ?>
       </div>
       <div class="column half">
-        <? if ( $current_term->count() ) { ?>
+        <?php if ( $current_term->count() ) { ?>
           <ul>
-            <? foreach ( $current_term->events() as $event ) { ?>
+            <?php foreach ( $current_term->events() as $event ) { ?>
               <li>
-                <a href="<?= $event->url() ?>" class="<?= $event->status() ?>">
+                <a href="<?php echo $event->url() ?>" class="<?php echo $event->status() ?>">
                   <h6>
-                    <?= $event->date('F jS') ?>
+                    <?php echo $event->date('F jS') ?>
                   </h6>
                   <h3>
-                    <?= $event->title() ?>
+                    <?php echo $event->title() ?>
                   </h3>
                 </a>
               </li>
-            <? } ?>
+            <?php } ?>
           </ul>
-        <? } else { ?>
+        <?php } else { ?>
           We're not in session right now. Check back in the Fall!
-        <? } ?>
+        <?php } ?>
       </div>
     </article>
   </section>
@@ -85,24 +85,24 @@
       </div>
     </article>
     <article class="tiles full-bleed">
-      <? foreach ( $events as $event ) { ?>
-        <div class="column quarter tablet-third mobile-half event" style="background-color: <?= $event->color() ?>; background-image: url('<?= $event->poster() ?>')">
-          <a href="<?= $event->url() ?>" class="tile-content">
-            <h3><?= $event->title()->html() ?></h3>
+      <?php foreach ( $events as $event ) { ?>
+        <div class="column quarter tablet-third mobile-half event" style="background-color: <?php echo $event->color() ?>; background-image: url('<?php echo $event->poster() ?>')">
+          <a href="<?php echo $event->url() ?>" class="tile-content">
+            <h3><?php echo $event->title()->html() ?></h3>
           </a>
         </div>
-      <? } ?>
+      <?php } ?>
     </article>
   </section>
 
   <section id="archive-more" class="archive-visit dark">
     <article class="more centered-layout">
       <div class="column third mobile-full more">
-        <?= html::a(page('archive')->url(), 'Full Archive', ['class' => 'button large gray']) ?>
+        <?php echo html::a(page('archive')->url(), 'Full Archive', ['class' => 'button large gray']) ?>
       </div>
     </article>
   </section>
 
 </main>
 
-<? snippet('footer') ?>
+<?php snippet('footer') ?>

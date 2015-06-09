@@ -1,7 +1,7 @@
 <section class="footer">
   <article>
     <div>
-      <h6><?= $site->copyright()->kirbytext() ?></h6>
+      <h6><?php echo $site->copyright()->kirbytext() ?></h6>
     </div>
   </article>
 </section>

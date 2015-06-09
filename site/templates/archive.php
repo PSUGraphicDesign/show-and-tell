@@ -1,44 +1,44 @@
-<? snippet('header') ?>
+<?php snippet('header') ?>
 
 <main>
 
   <section class="page-title">
     <article>
       <div class="column full">
-        <h1><?= $page->title()->html() ?></h1>
+        <h1><?php echo $page->title()->html() ?></h1>
       </div>
     </article>
   </section>
 
-  <? foreach ( $archive as $year ) { ?>
+  <?php foreach ( $archive as $year ) { ?>
     <section class="archive-year">
       <article>
         <div class="column full">
-          <h2><?= $year->title()->html() ?></h2>
+          <h2><?php echo $year->title()->html() ?></h2>
         </div>
       </article>
       <article class="terms">
-        <? foreach ( $year->terms() as $term ) { ?>
+        <?php foreach ( $year->terms() as $term ) { ?>
           <div class="column third term">
-            <h3><?= $term->title() ?></h3>
-            <? if ( $term->events()->count() ) { ?>
+            <h3><?php echo $term->title() ?></h3>
+            <?php if ( $term->events()->count() ) { ?>
               <ul>
-                <? foreach ( $term->events() as $event ) { ?>
+                <?php foreach ( $term->events() as $event ) { ?>
                   <li>
-                    <h6><?= $event->date('M jS') ?></h6>
-                    <h4><?= html::a($event->url(), $event->title()) ?></h4>
+                    <h6><?php echo $event->date('M jS') ?></h6>
+                    <h4><?php echo html::a($event->url(), $event->title()) ?></h4>
                   </li>
-                <? } ?>
+                <?php } ?>
               </ul>
-            <? } else { ?>
+            <?php } else { ?>
               <em>No events scheduled this term!</em>
-            <? } ?>
+            <?php } ?>
           </div>
-        <? } ?>
+        <?php } ?>
       </article>
     </section>
-  <? } ?>
+  <?php } ?>
   
 </main>
 
-<? snippet('footer') ?>
+<?php snippet('footer') ?>

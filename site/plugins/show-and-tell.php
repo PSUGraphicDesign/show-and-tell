@@ -1,4 +1,4 @@
-<? class ST {
+<?php class ST {
   public static function body_classes () {
     $classes = array(
       page()->uid(),

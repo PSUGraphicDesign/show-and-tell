@@ -1,26 +1,26 @@
-<? snippet('header') ?>
+<?php snippet('header') ?>
 
 <main>
 
   <section class="page-title">
     <article class="kebab">
       <div class="column full">
-        <h1><?= $page->title()->html() ?></h1>
+        <h1><?php echo $page->title()->html() ?></h1>
       </div>
     </article>
   </section>
 
   <section class="artist-list">
     <article>
-      <? foreach ( $artists as $artist ) { ?>
+      <?php foreach ( $artists as $artist ) { ?>
         <div class="column half artist">
-          <h3><?= $artist->title()->html() ?></h3>
-          <?= $artist->bio()->kirbytext() ?>
+          <h3><?php echo $artist->title()->html() ?></h3>
+          <?php echo $artist->bio()->kirbytext() ?>
         </div>
-      <? } ?>
+      <?php } ?>
     </article>
   </section>
 
 </main>
 
-<? snippet('footer') ?>
+<?php snippet('footer') ?>

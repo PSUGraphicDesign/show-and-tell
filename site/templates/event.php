@@ -1,20 +1,20 @@
-<? snippet('header') ?>
+<?php snippet('header') ?>
 
 <main>
 
-  <section class="page-title <?= $page->lightness() ?>" style="background-color: <?= $page->color() ?>">
+  <section class="page-title <?php echo $page->lightness() ?>" style="background-color: <?php echo $page->color() ?>">
     <article class="kebab">
       <div class="column three-quarters">
-        <? if ( $speaker->link() ) { ?>
+        <?php if ( $speaker->link() ) { ?>
           <h1>
-            <a href="<?= $speaker->link() ?>" target="_blank"><?= $page->title()->html() ?></a>
+            <a href="<?php echo $speaker->link() ?>" target="_blank"><?php echo $page->title()->html() ?></a>
           </h1>
-        <? } else { ?>
-          <h1><?= $page->title()->html() ?></h1>
-        <? } ?>
+        <?php } else { ?>
+          <h1><?php echo $page->title()->html() ?></h1>
+        <?php } ?>
       </div>
       <div class="column quarter">
-        <?= $page->date('F jS, Y') ?>
+        <?php echo $page->date('F jS, Y') ?>
       </div>
     </article>
   </section>
@@ -23,33 +23,33 @@
     <article>
       <div class="column two-thirds">
         <div class="info-group text">
-          <?= $speaker->bio()->kirbytext() ?>
+          <?php echo $speaker->bio()->kirbytext() ?>
         </div>
 
-        <? if ( $speaker->link() ) { ?>
+        <?php if ( $speaker->link() ) { ?>
           <div class="info-group link">
-            <a href="<?= $speaker->link() ?>" target="_blank">Website</a>
+            <a href="<?php echo $speaker->link() ?>" target="_blank">Website</a>
           </div>
-        <? } ?>
+        <?php } ?>
 
-        <? if ( $page->info()->length()) { ?> 
+        <?php if ( $page->info()->length()) { ?> 
           <div class="info-group link">
-            <?= $page->info()->kirbytext() ?>
+            <?php echo $page->info()->kirbytext() ?>
           </div>
-        <? } ?>
+        <?php } ?>
 
-        <? if ( $speaker->other_events($page)->count() ) { ?>
+        <?php if ( $speaker->other_events($page)->count() ) { ?>
           <div class="info-group other-events">
-            <h3><?= $speaker->title() ?> was also a <em>Show & Tell</em> guest on:</h3>
+            <h3><?php echo $speaker->title() ?> was also a <em>Show & Tell</em> guest on:</h3>
             <ul>
-              <? foreach ( $speaker->other_events($page) as $other ) { ?>
-                <li><?= html::a($other->url(), $other->date('F jS, Y')) ?></li>
-              <? } ?>
+              <?php foreach ( $speaker->other_events($page) as $other ) { ?>
+                <li><?php echo html::a($other->url(), $other->date('F jS, Y')) ?></li>
+              <?php } ?>
           </div>
-        <? } ?>
+        <?php } ?>
       </div>
       <div class="column third">
-        <?= html::img($page->poster()) ?>
+        <?php echo html::img($page->poster()) ?>
       </div>
     </article>
   </section>
@@ -57,24 +57,24 @@
   <section class="pagination">
     <article>
       <div class="column half previous">
-        <? if ( $page->hasPrev() ) { ?>
-          <a href="<?= $page->prev()->url() ?>">
+        <?php if ( $page->hasPrev() ) { ?>
+          <a href="<?php echo $page->prev()->url() ?>">
             <span class="direction">Previous</span>
-            <?= $page->prev()->title() ?>
+            <?php echo $page->prev()->title() ?>
           </a>
-        <? } ?>
+        <?php } ?>
       </div>
       <div class="column half next">
-        <? if ( $page->hasNext() ) { ?>
-          <a href="<?= $page->next()->url() ?>">
+        <?php if ( $page->hasNext() ) { ?>
+          <a href="<?php echo $page->next()->url() ?>">
             <span class="direction">Next</span>
-            <?= $page->next()->title() ?>
+            <?php echo $page->next()->title() ?>
           </a>
-        <? } ?>
+        <?php } ?>
       </div>
     </article>
   </section>
 
 </main>
 
-<? snippet('footer') ?>
+<?php snippet('footer') ?>
