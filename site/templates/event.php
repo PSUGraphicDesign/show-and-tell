@@ -21,7 +21,7 @@
 
   <section class="event-info">
     <article>
-      <div class="column two-thirds">
+      <div class="column half">
         <div class="info-group text">
           <?php echo $speaker->bio()->kirbytext() ?>
         </div>
@@ -48,7 +48,7 @@
           </div>
         <?php } ?>
       </div>
-      <div class="column third">
+      <div class="column half">
         <?php echo html::img($page->poster()) ?>
       </div>
     </article>
