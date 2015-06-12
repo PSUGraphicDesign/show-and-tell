@@ -45,38 +45,40 @@
     </article>
   </section>
 
-  <section id="upcoming" class="this-term has-flag">
-    <article class="origin-right header">
-      <div class="column third flag right">
-        <h2>Upcoming</h2>
-      </div>
-    </article>
-    <article class="event-list kebab">
-      <div class="column half">
-        <?php echo html::img($current_term->image($current_term->poster())->url()) ?>
-      </div>
-      <div class="column half">
-        <?php if ( $current_term->count() ) { ?>
-          <ul>
-            <?php foreach ( $current_term->events() as $event ) { ?>
-              <li>
-                <a href="<?php echo $event->url() ?>" class="<?php echo $event->status() ?>">
-                  <h6>
-                    <?php echo $event->date('F jS') ?>
-                  </h6>
-                  <h3>
-                    <?php echo $event->title() ?>
-                  </h3>
-                </a>
-              </li>
-            <?php } ?>
-          </ul>
-        <?php } else { ?>
-          We're not in session right now. Check back in the Fall!
-        <?php } ?>
-      </div>
-    </article>
-  </section>
+  <? if ( $current_term ) { ?>
+    <section id="upcoming" class="this-term has-flag">
+      <article class="origin-right header">
+        <div class="column third flag right">
+          <h2>Upcoming</h2>
+        </div>
+      </article>
+      <article class="event-list kebab">
+        <div class="column half">
+          <?php echo html::img($current_term->image($current_term->poster())->url()) ?>
+        </div>
+        <div class="column half">
+          <?php if ( $current_term->count() ) { ?>
+            <ul>
+              <?php foreach ( $current_term->events() as $event ) { ?>
+                <li>
+                  <a href="<?php echo $event->url() ?>" class="<?php echo $event->status() ?>">
+                    <h6>
+                      <?php echo $event->date('F jS') ?>
+                    </h6>
+                    <h3>
+                      <?php echo $event->title() ?>
+                    </h3>
+                  </a>
+                </li>
+              <?php } ?>
+            </ul>
+          <?php } else { ?>
+            We're not in session right now. Check back in the Fall!
+          <?php } ?>
+        </div>
+      </article>
+    </section>
+  <? } ?>
 
   <section id="archive" class="archive has-flag">
     <article class="origin-right">

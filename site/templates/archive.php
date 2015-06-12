@@ -20,7 +20,7 @@
       <article class="terms">
         <?php foreach ( $year->terms() as $term ) { ?>
           <div class="column third term">
-            <h3><?php echo $term->title() ?></h3>
+            <h3><?php echo $term->title()->html() ?></h3>
             <?php if ( $term->events()->count() ) { ?>
               <ul>
                 <?php foreach ( $term->events() as $event ) { ?>
@@ -31,7 +31,7 @@
                 <?php } ?>
               </ul>
             <?php } else { ?>
-              <em>No events scheduled this term!</em>
+              <em>Sorry, we haven't added any events for <?php echo $term->title()->html() ?>.</em>
             <?php } ?>
           </div>
         <?php } ?>
